@@ -25,7 +25,12 @@ public class LinkedPriorityQueue implements PriorityQueue{
 
     @Override
     public Object dequeue() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for(int i=0; i<list.length; i++){
+            if(list[i].size()>0){
+                return list[i].remove(0);
+            }
+        }
+        throw new IllegalStateException("Queue is empty");
     }
 
     @Override
@@ -35,7 +40,7 @@ public class LinkedPriorityQueue implements PriorityQueue{
 
     @Override
     public int size() {
-      return list.length; //number of priorities
+      return list.length; //number of pr
     }
     
     public boolean hasData(){
